@@ -1,0 +1,23 @@
+package: cloud.lazycat.app.lightrag
+version: 1.5.7
+name: LightRAG
+description: 轻量级图增强检索知识库
+author: HKUDS
+license: MIT
+homepage: https://github.com/HKUDS/LightRAG
+min_os_version: 1.6.0
+permissions:
+  required:
+    - net.internet
+locales:
+  zh-CN:
+    name: LightRAG 知识库
+    description: 基于知识图谱的检索增强生成（GraphRAG）知识库，支持多种文档格式导入、实体关系抽取与多模式检索，接入任意 OpenAI 兼容的云端模型。
+    usage: |
+      首次打开进入「设置」填写云端模型 API Key（如 OpenAI / DeepSeek / 硅基流动），
+      然后在「文档」里上传 PDF / Word / Markdown，等待索引完成后即可检索问答。
+  en-US:
+    name: LightRAG
+    description: Lightweight graph-based retrieval-augmented generation knowledge base.
+    usage: |
+      Open Settings and fill in a cloud model API key, upload documents, then query.
