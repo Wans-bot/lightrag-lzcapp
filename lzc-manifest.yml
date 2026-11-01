@@ -1,0 +1,24 @@
+usage: |
+  设置里填云端模型 API Key，上传文档后即可检索问答。
+application:
+  subdomain: lightrag
+  health_check:
+    test_url: http://lightrag:9621/health
+    disable: false
+    start_period: 120s
+    timeout: 10s
+  upstreams:
+    - location: /
+      backend: http://lightrag:9621
+services:
+  lightrag:
+    environment:
+      TZ: Asia/Shanghai
+      HOST: 0.0.0.0
+      PORT: "9621"
+      WORKING_DIR: /app/data/rag_storage
+      INPUT_DIR: /app/data/inputs
+      PROMPT_DIR: /app/data/prompts
+    image: registry.lazycat.cloud/wans/wans-lightrag-1.5.7:0679ade4641f50af
+    binds:
+      - /lzcapp/var/lightrag:/app/data
